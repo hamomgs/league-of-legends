@@ -11,6 +11,7 @@
 
 main {
   display: flex;
+  max-height: 100vh;
 }
 
 .login-form {
@@ -18,7 +19,7 @@ main {
   flex-direction: column;
   align-items: center;
   width: 28vw;
-  padding: 5.7vw 3.4vw;
+  padding: 4.5vw 3.4vw;
 }
 
 .login-form__logo img {
@@ -33,6 +34,7 @@ h3 {
 }
 
 .login-form__inputs {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,6 +63,33 @@ h3 {
   background-color: #E8E6E6;
 }
 
+.inputs__see-password {
+  position: absolute;
+  bottom: 2.5vw;
+  right: 0;
+  width: 3vw;
+  height: 3vw;
+  background-color: #E8E6E6;
+}
+
+.login-form__inputs i {
+  position: relative;
+  left: 0.7vw;
+  bottom: -1.2vw;
+  font-size: 1.2vw;
+  color: #716E6E;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.login-form__inputs i:hover {
+  color: #000;
+}
+
+.invisible {
+  display: none;
+}
+
 .login-form__social-medias {
   display: flex;
   gap: 1.6vw;
@@ -76,6 +105,7 @@ h3 {
   border-radius: 0.3vw;
   background-color: #000;
   cursor: pointer;
+  transition: 0.4s ease-in-out;
 }
 
 .login-form__social-medias figure:nth-child(1) {
@@ -89,6 +119,10 @@ h3 {
 .login-form__social-medias img {
   width: 1.5vw;
   height: 1.5vw;
+}
+
+.login-form__social-medias figure:hover {
+  transform: translateY(-5px);
 }
 
 .login-form__keep-login {
@@ -171,4 +205,74 @@ button.blocked {
   background-position: right top;
   width: 78vw;
   height: 100vh;
+}
+
+/* Media Queries */
+
+@media (max-width: 800px) {
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .login-form {
+    width: 30vw;
+    height: 70vh;
+    border-radius: 5px;
+    background-color: #fff;
+    transform: scale(1.2);
+  }
+
+  .login-form__inputs i {
+    bottom: -0.3vw;
+  }
+
+  .login-form__keep-login {
+    margin-left: 3.2vw;
+  }
+
+  .banner {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    z-index: -1;
+  }
+}
+
+@media (max-width: 460px) {
+  .login-form {
+    width: 28vw;
+    height: 40vh;
+    border-radius: 5px;
+    background-color: #fff;
+    transform: scale(2);
+  }
+
+  .login-form__inputs i {
+    bottom: 1.8vw;
+  }
+
+  .login-form__keep-login {
+    margin-left: 1vw;
+  }
+
+  .login-form__btn-container i {
+    position: absolute;
+    top: 0.6vw;
+    left: 0.5vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-form {
+    height: 35vh;
+    transform: scale(2.5);
+  }
+
+  .login-form__inputs i {
+    bottom: 2.5vw;
+  }
 }
